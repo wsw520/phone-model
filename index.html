@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>24小时热线</title>
+	<script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="css/iconfont.eot.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<style>
+       #ad_3v{display: none;}
+       body{background:#0da5d6}
+	    *{margin: 0;padding: 0}
+	    input,button{outline:none;}
+        .d1{width: 276px;height: 529px;margin: 150px auto;
+        	box-shadow: 4px 1px 22px #000;
+        	            /*inset 5px 5px 1px #dbd9da,*/
+        	         /* inset -4px -4px 1px #dbd9da;*/
+        	background: #fff;
+          border-radius:33px;
+        	position: relative;
+          border: 5px solid #E9C9C5;
+        }
+        .d1:before{
+      		content: "";
+          width: 0;
+          height: 38px;
+          border: 2px solid #e9c9c5;
+          position: absolute;
+          top: 105px;
+          left: -8px;
+          border-radius: 2px;
+        }
+        .d1:after{
+      		content: "";
+          width: 0;
+          height: 38px;
+          border: 3px solid #e9c9c5;
+          position: absolute;
+          top: 163px;
+          left: -9px;
+          border-radius: 2px;
+        }
+        .d2{width: 310px;height: 60px;position: relative;}
+        .d3{width: 60px;
+            height: 0;
+            border: 3px solid #000;
+            position: absolute;
+            top: 35px;
+            left: 110px;
+            border-radius: 3px;
+           }
+        .d3:before{
+      		content: "";
+          width: 0px;
+          height: 0;
+          border: 5px solid #000;
+          position: absolute;
+          top: -5px;
+          left: -24px;
+          border-radius: 30px;
+        }
+        .d3:after{
+      		content: "";
+          width: 0;
+          height: 0;
+          border: 4px solid #000;
+          position: absolute;
+          top: -25px;
+          left: 27px;
+          border-radius: 5px;
+        }
+        .d4{
+			    width: 262px;
+			    height: 395px;
+			    border: 2px solid;
+			    margin-left: 5px;
+			    background: url(img/g1.jpg)no-repeat -37px 31px;
+        }
+        .d5{
+        	width: 262px;height: 62px;background:#00BCD4;
+        }
+        i:nth-child(2){
+        	margin-left: 125px;
+        }
+        .a{
+    	margin-left: 196px;
+        margin-right: 21px;
+        color: #fff;
+        float: left;
+        margin-top: -33px;
+        }
+        .b{margin-left: 232px;
+        color: #fff;
+        float: left;
+        margin-top: -33px;
+      }
+        .p1{
+        	font-size: 20px;color: #fff;
+        }
+        .p2{
+        	color: #fff;
+        }
+        .p1,.p2{vertical-align: middle;}
+        .aj{
+		    width: 45px;
+		    height: 44px;
+		    border: 3px solid #e9c9c5;
+		    border-radius: 50%;
+    		margin-left: 115px;
+        margin-top: 10px;
+        }
+        .d6{
+    		width: 262px;
+        height: 38px;
+        background: #ccc;
+        margin-top: 301px;
+        position: relative;
+        }
+        .d6:before{
+		    content: "+";
+		    width: 20px;
+		    height: 20px;
+		    border: 1px solid #a29494;
+		    border-radius: 20px;
+		    position: absolute;
+		    top: 8px;
+		    left: 33px;
+		    text-align: center;
+        }
+        button{
+		    padding: 0 10px;
+		    border-radius: 6px;
+		    line-height: 21px;
+        }
+        
+        .ip{
+		    height: 29px;
+		    margin-left: 61px;
+		    margin-top: 5px;
+		    border-radius: 18px;
+		    border: none;
+        }
+        .nr{
+    		 width: 262px;
+        height: 296px;
+        float: left;
+        margin-top: 6px;
+        overflow: auto;
+        position: relative;
+	    	}
+        .pp{
+        line-height: 24px;
+        font-family: "微软雅黑";
+        color: #fff;
+        float: right;
+        font-size: 20px;
+        background: #00BCD4;;
+        border-radius: 6px;
+        margin-right: 8px;
+        padding: 0 10px;margin: 10px;
+        clear: both;
+      }
+      .hf{
+        line-height: 24px;
+        font-family: "微软雅黑";
+        color: #000;
+        font-size: 20px;
+        background: #fff;
+        border-radius: 6px;
+        padding: 0 10px;
+        clear: both;margin: 10px;
+        float: left;
+        }
+        .wu{
+		    display: flex;
+		    justify-content: center;
+		    margin-top: -29px;
+		    text-align: center;
+        }
+        .dn{
+		    color: #fff;
+		    font-size: 10px;
+		    margin-top: 10px;
+		    margin-left: -35px;
+        line-height: 26px;
+      }
+      #weixin,#weixin2{
+      float: left;
+      margin-top: 99px;
+      margin-left: 17px;
+      width: 47px;
+      height: 41px;
+      background: rgba(255, 255, 255, 0);
+      display: none;
+      }
+     #weixin2{
+      margin-left: 20px;
+     }
+     span.sjxx {
+       margin-left: 7px;
+     }
+     /*换背景*/
+     .hbj{
+        width: 600px;
+        margin-left: 30%;
+        text-align: center;
+     }
+    .hbj ul li{
+         width: 10px;
+         height: 20px;
+         margin-left:5px;
+         border-radius: 50%;
+         float: left;
+         width: 62px;
+     }
+     .hbj ul li:nth-child(1){
+          font-size: 20px;
+          width: 112px;
+          line-height: 20px;
+     }
+     .hbj ul li:nth-child(2){
+          background: #b903fc; 
+     }
+     .hbj ul li:nth-child(3){
+          background: #e329b9; 
+     }
+     .hbj ul li:nth-child(4){
+          background: #ccc; 
+     }.hbj ul li:nth-child(5){
+          background: red; 
+     }
+	</style>
+	<script>
+         function fz(){
+              var val=$(".ip").val();    
+            	var nrk=$(".nr");
+                 if(val=="不好玩"||val=="不好玩。"||val=="没意思"||val=="真没劲"||val=="没劲"||val=="无聊"||val=="无聊。"||val=="真无聊"){
+                      $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("我也觉得。").appendTo(nrk);
+                }
+                else if(val=="同学？"||val=="同学"||val=="同学你好"||val=="老同学"||val=="老同学。"){
+                      $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("在的。").appendTo(nrk);
+                }
+                else if(val=="你好"||val=="你好。"||val=="你好啊"||val=="老同学你好"||val=="老同学你好。"){
+                      $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("亲，你好。").appendTo(nrk);
+                }
+                else if(val=="在吗"||val=="在吗？"||val=="在？"||val=="在"){
+                	    $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("亲，在呢，有啥事呢？").appendTo(nrk);
+                }
+                else if(val=="你叫什么名字啊"||val=="你叫什么名字呢"||val=="你名字叫什么呢"||val=="你叫什么名字"||val=="你叫什么名字？"||val=="你是谁？"||val=="你是谁"){
+                	   $("<p class='pp'>").html(val).appendTo(nrk);
+                     $("<p class='hf'>").html("亲，我叫小伍啊。").appendTo(nrk);
+                }
+                else if(val=="小伍是谁"||val=="小伍是谁？"||val=="小伍是谁啊？"||val=="小伍是谁啊"||val=="是谁小伍？"||val=="是谁小伍"){
+                      $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("小伍是我啊，傻...").appendTo(nrk);
+                }
+                else if(val=="在干嘛"||val=="你在干嘛"||val=="你在干嘛？"||val=="你在干嘛呢？"||val=="你在干嘛呢"){
+                	   $("<p class='pp'>").html(val).appendTo(nrk);
+                     $("<p class='hf'>").html("亲，我在跟你聊天啊").appendTo(nrk);
+                }
+                else if(val=="你多大了？"||val=="你多大了"||val=="你多大了啊？"||val=="你几岁啦"||val=="你多大啦"||val=="你了几岁啊"){
+                	    $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("你猜！").appendTo(nrk);
+                }
+                else if(val=="日"||val=="草泥马"||val=="日狗"||val=="日狗了"||val=="屎湾"||val=="操"){
+                	 $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("亲，你是坏人").appendTo(nrk);
+                }
+                else if(val=="厉害啊"||val=="厉害哦"||val=="厉害了"||val=="不错"||val=="不错嘛"||val=="666"||val=="叼"){
+                      $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("过奖过奖").appendTo(nrk);
+                }
+                else if(val=="吃饭没？"||val=="吃饭没"||val=="你吃饭没"||val=="你吃饭了么"||val=="你吃没"||val=="你吃饭没啊"){
+                	    $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("没啊，你要请么？").appendTo(nrk);
+                }else if(val=="我漂亮吗？"||val=="我漂亮吗"||val=="我美吗？"||val=="我美吗"||val=="谁最漂亮？"||val=="谁最漂亮"){
+                      $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("和我比就一般般啦，哈哈！").appendTo(nrk);
+                }
+                else if(val=="你有女朋友吗？"||val=="你有女朋友吗"||val=="你女朋友叫什么名字"||val=="你女朋友哪里人？"||val=="你女朋友哪里人"||val=="你女朋友叫什么名字？"){
+                      $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("你猜！").appendTo(nrk);
+                }
+                else if(val=="百度"){
+                      $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("请点击<a href='https://www.baidu.com'>www.baidu.com</a>").appendTo(nrk);
+                }
+                else{
+                	    $("<p class='pp'>").html(val).appendTo(nrk);
+                      $("<p class='hf'>").html("亲，你问的问题我没法回答呢，要不你在换一个？").appendTo(nrk);
+                }
+                
+              $(".ip").val(""); 
+         }
+
+$(function(){
+             var nrk=$(".nr");
+        	   var val=$(".ip").val();  
+              // $(".ip").on("keyup",function(e){
+              //            if(e.keyCode==13){
+              //            for(i=0;i<$(this).val().length;i++){
+              //                   if($(this).val()[i]=="好"){
+              //                           $("<p class='pp'>").html($(this).val()).appendTo(nrk);
+              //                           $("<p class='hf'>").html("亲,你好啊！").appendTo(nrk);
+              //                            // break;
+              //                    }
+              //                    else if($(this).val()[i]=="饭"){
+              //                           $("<p class='pp'>").html($(this).val()).appendTo(nrk);
+              //                           $("<p class='hf'>").html("我没吃啊，你要请么！").appendTo(nrk);
+              //                           // break;
+              //                    }
+              //                    else{
+              //                       $("<p class='pp'>").html($(this).val()).appendTo(nrk);
+              //                       $("<p class='hf'>").html("亲，你问的问题我没法回答呢，要不你在换一个？").appendTo(nrk);
+              //                           // break;
+              //                    }
+              //            }
+              //            }
+              //  })  
+// ***********************
+            var nrk=$(".nr");
+            //点击发送按钮
+            $("button").click(function(){
+                    if ($(".ip").val()=="") {
+                        return;
+                    }else{
+                        fz();
+                    }
+            })
+            //回车发送
+             $(".ip").on("keyup",function(e){
+             	    if(e.keyCode==13){
+                     if ($(".ip").val()=="") {
+                        return;
+                    }else{
+                        fz();
+                    }
+                    // $(".ip").val(" ");
+             	    }
+             })
+            // $(".aj").click(function(){
+            // 	    $("<p class='hf'>").html("亲，不要乱按哦,连按两下返回桌面。").appendTo(nrk);
+            // })
+            $(".aj").click(function(){
+                    $(".d5").css("display","none");
+                    $(".nr").css("display","none");
+                    $("#weixin").css("display","inline-block");
+                    $("#weixin2").css("display","inline-block");
+                    $(".d4").css({
+                            "background":'url(img/pg5.png)no-repeat  -11px 0px'
+                    });
+                    
+            })
+          $("#weixin,#weixin2").click(function(){
+                   $(".d5").css("display","inline-block");
+                   $(".nr").css("display","inline-block");
+                   $("#weixin").css("display","none");
+                   $("#weixin2").css("display","none");
+                    $(".d4").css({
+                            "background":"inline-block",
+                            "background":'url(img/g1.jpg)no-repeat -37px 31px'
+                    })
+                    nrk.html(" ");
+          })
+
+          //获取时间
+          var t=new Date;
+          var tt=t.getHours()+":"+t.getMinutes();
+          console.log(t);
+          $(".sjxx").html(tt);
+          //点击换背景
+          $(".hbj ul li").click(function(){
+                 var ind=$(this).index();
+                 switch(ind){
+                     case 1:
+                     $("body").css("background","#b903fc");break;
+                     case 2:
+                     $("body").css("background","#e329b9");break;
+                     case 3:
+                     $("body").css("background","#ccc");break;
+                     case 4:
+                     $(".d4").css("background","url(img/g2.jpg)no-repeat -37px 31px");break;
+                 }
+          })
+
+})
+	</script>
+</head>
+<body>
+	<div class="d1">
+         <div class="d2">
+            <div class="d3"></div>
+         </div>
+         <div class="d4">
+         <div id="weixin"></div>
+         <div id="weixin2"></div>
+             <div class="d5">
+	               <span class="sjxx"></span>
+	               <i class="iconfont icon-xinhao" style="font-size: 13px"></i>
+	               <span>中国联通</span>
+	               <i class="iconfont icon-dianliang3"></i>
+	               <span class="p1"><</span><span class="p2">消息</span><div class="wu">Mr伍<p class="dn">电脑在线</p></div>
+                
+	               <i class="iconfont icon-dianhua a"></i>
+	               <i class="iconfont icon-yonghu b"></i>
+	            <!-- <iframe src="http://www.baidu.com" width="275px" height="331px"> -->
+              <div class="nr">
+	            </div>
+              <!-- </iframe> -->
+	            <div class="d6">
+	                <input type="text" class="ip" value="">
+	                <button>发送</button>
+	            </div>
+            </div>
+
+         </div>
+         <div class="aj"></div>
+	</div>
+  <!-- 换背景 -->
+  <div class="hbj">
+  <ul>
+    <li>点击换背景</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+  </ul>
+  </div>
+</body>
+</html>
+<!-- var val=$(".ip").val();  
+              $(".ip").on("keyup",function(){
+                        for(i=0;i<$(this).val().length;i++){
+                                if($(this).val()[i]=="你"){
+                                        console.log($(this).val())
+
+                                        break;
+                                }
+
+                        }
+                
+              })   -->
